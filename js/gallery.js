@@ -1,11 +1,17 @@
+function upDate(previewPic) {
+  console.log("upDate triggered");
+  console.log("ALT:", previewPic.alt);
+  console.log("SRC:", previewPic.src);
 
-function upDate(previewPic){
-   old=document.getElementById("image").innerHTML
-   document.getElementById("image").innerHTML=previewPic.alt
-   document.getElementById("image").style.background="url("+previewPic.src+")" ;
-	}
+  const imageDiv = document.getElementById("image");
+  imageDiv.style.backgroundImage = `url('${previewPic.src}')`;
+  imageDiv.textContent = previewPic.alt;
+}
 
-	function unDo(){
-		document.getElementById("image").innerHTML=old
-    document.getElementById("image").style.background="#8e68ff";    
-	}
+function unDo() {
+  console.log("unDo triggered");
+
+  const imageDiv = document.getElementById("image");
+  imageDiv.style.backgroundImage = "url('')";
+  imageDiv.textContent = "Hover over an image below to display here.";
+}
